@@ -22,7 +22,7 @@ import { RouterLink } from 'vue-router'
     <img src="/logo.png" width="100" height="200" alt="Мой Дом">
     <div class="flex">
       <RouterLink class="header-link" to="/">Мой Дом</RouterLink>
-      <RouterLink class="header-link" :to="{ name: 'about' }">About</RouterLink>
+      <RouterLink class="header-link" :to="{ name: 'account' }">Мой профиль</RouterLink>
       <RouterLink class="header-link" :to="{ name: 'login' }">Войти</RouterLink>
       <RouterLink class="header-link" :to="{ name: 'signup' }">Регистрация</RouterLink>
     </div>
