@@ -7,4 +7,8 @@
     .container{
         @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
     }
+    .header-link{
+        @apply py-3 px-2 text-gray-600 text-2xl font-semibold 
+        hover:text-gray-400 mx-2 border-b-2 border-opacity-0
+    }
 }
