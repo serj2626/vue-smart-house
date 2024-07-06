@@ -4,16 +4,20 @@ import Navigation from './components/Navigation.vue'
 </script>
 
 <template>
-  <div class="app container">
+
     <header>
-      <Navigation />
+        <Navigation />
     </header>
-    <main>
-      <RouterView />
+    <main class="container mx-auto">
+        <RouterView />
     </main>
-  </div>
 
 
 </template>
 
-<style scoped></style>
+<style scoped>
+main{
+
+    min-height: 100vh;
+}
+</style>
