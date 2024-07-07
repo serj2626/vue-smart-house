@@ -1,6 +1,9 @@
 # smart_app
 
-This template should help get you started developing with Vue 3 in Vite.
+Проект предназначен для управления умным домом.
+
+![image](src/assets/images/readme.png)
+
 
 ## Recommended IDE Setup
 
