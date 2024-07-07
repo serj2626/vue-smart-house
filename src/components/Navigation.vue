@@ -19,7 +19,7 @@ import { RouterLink } from 'vue-router'
     <img src="../assets/images/status/svet_on.png" alt="">
   </nav>
   <header class="container mx-auto h-[100px] mt-3 flex justify-around items-center">
-    <img src="/logo.png" width="100" height="200" alt="Мой Дом">
+    <img src="/logo1.png" width="100" height="200" alt="Мой Дом">
     <div class="flex">
       <RouterLink class="header-link" to="/">Мой Дом</RouterLink>
       <RouterLink class="header-link" :to="{ name: 'account' }">Мой профиль</RouterLink>
