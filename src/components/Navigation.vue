@@ -34,7 +34,7 @@ import { RouterLink } from 'vue-router'
 <style scoped>
 nav {
   height: 60px;
-  background-color: black;
+  background-color: rgb(45, 43, 43);
 }
 
 nav img {
