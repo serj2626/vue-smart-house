@@ -13,7 +13,6 @@ const getInstruments = async () => {
       "https://212d693d0d677138.mokky.dev/instruments"
     );
     instruments.value = res.data;
-    console.log(instruments.value);
   } catch (error) {
     toast.error("При получении данных произошла ошибка");
   }

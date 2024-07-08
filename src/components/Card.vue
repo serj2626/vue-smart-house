@@ -1,7 +1,9 @@
 <script setup>
 import axios from "axios";
+import { ref } from "vue";
 import { useToast } from "vue-toastification";
 
+const value = ref(0);
 const toast = useToast();
 defineProps({
   item: Object,
@@ -9,16 +11,29 @@ defineProps({
 
 const updateStatus = async (id) => {
   try {
+    let item = await axios.get(
+      "https://212d693d0d677138.mokky.dev/instruments/" + id
+    );
+    await axios.patch("https://212d693d0d677138.mokky.dev/instruments/" + id, {
+      status: !item.data.status,
+    });
+    toast.success("Данные обновлены");
+  } catch {
+    toast.error("При обновлении данных произошла ошибка");
+  }
+};
+
+const updateValue = async (id) => {
+  try {
     let item = await axios.patch(
       "https://212d693d0d677138.mokky.dev/instruments/" + id,
       {
-        // status: !item.status,
-        status: !item.status,
+        status: item.status ? false : true,
       }
     );
-
     toast.success("Данные обновлены");
-  } catch (error) {
+    value.value = 0;
+  } catch {
     toast.error("При обновлении данных произошла ошибка");
   }
 };
