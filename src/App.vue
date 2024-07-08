@@ -1,39 +1,30 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Navigation from './components/Navigation.vue'
+import { RouterView } from "vue-router";
+import Navigation from "./components/Navigation.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <template>
-    <div class="app">
-        <header>
-            <Navigation />
-        </header>
-        <main class="container mx-auto">
-            <RouterView />
-        </main>
-        <footer>
-            <div>
-                <p><span class="font-bold">Boytsov SV</span> &copy; 2024 St-Petersburg</p>
-            </div>
-            <div class="flex gap-4">
-                <i class="fa-brands fa-vk fa-xl" style="color: #024bca;"></i>
-                <i class="fa-brands fa-linkedin fa-xl" style="color: #419ce1;"></i>
-                <i class="fa-brands fa-github fa-xl"></i>
-                <i class="fa-brands fa-telegram fa-xl" style="color: #0f7dd2;"></i>
-            </div>
-
-        </footer>
-    </div>
+  <div class="app">
+    <header>
+      <Navigation />
+    </header>
+    <main class="container mx-auto">
+      <RouterView />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+  </div>
 </template>
 
 <style scoped>
 .app {
-    background-color: #fbf1f1;
+  background-color: #fbf1f1;
 }
 
 main {
-
-    min-height: 80vh;
+  min-height: 80vh;
 }
 
 footer {
