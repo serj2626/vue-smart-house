@@ -9,11 +9,11 @@ defineProps({
 
 const updateStatus = async (id) => {
   try {
-    await axios.patch(
+    let item = await axios.patch(
       "https://212d693d0d677138.mokky.dev/instruments/" + id,
       {
         // status: !item.status,
-        value: 0,
+        status: !item.status,
       }
     );
 
@@ -34,8 +34,12 @@ const updateStatus = async (id) => {
       </div>
       <label class="inline-flex items-center me-5 cursor-pointer">
         <input
-        @change="updateStatus(item.id)"
-         type="checkbox" value="" class="sr-only peer" checked />
+          @change="updateStatus(item.id)"
+          type="checkbox"
+          value=""
+          class="sr-only peer"
+          checked
+        />
         <div
           class="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
         ></div>
@@ -91,7 +95,7 @@ const updateStatus = async (id) => {
           data-input-counter
           aria-describedby="helper-text-explanation"
           class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="999"
+          :placeholder="item.value"
           required
         />
         <button
