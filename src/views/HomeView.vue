@@ -1,7 +1,7 @@
 <script setup>
 import axios from "axios";
 import { onMounted, ref } from "vue";
-
+import Card from "../components/Card.vue";
 import { useToast } from "vue-toastification";
 
 const toast = useToast();
@@ -28,8 +28,7 @@ onMounted(getInstruments);
   <div v-if="!instruments.length" role="status" class="flex justify-center">
     <svg
       aria-hidden="true"
-      class="inline w-20 h-20 text-gray-200 animate-spin 
-      dark:text-gray-600 fill-red-700"
+      class="inline w-20 h-20 text-gray-200 animate-spin dark:text-gray-600 fill-red-700"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -47,42 +46,8 @@ onMounted(getInstruments);
   </div>
 
   <div v-else class="flex justify-around flex-wrap">
-    <div
-      v-for="item in instruments"
-      :key="item.id"
-      class="card max-w-sm px-6 pb-10 pt-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-    >
-      <div class="flex justify-between items-center py-4">
-        <div class="title">
-          {{ item.name }}
-        </div>
-        <label class="inline-flex items-center me-5 cursor-pointer">
-          <input type="checkbox" value="" class="sr-only peer" checked />
-          <div
-            class="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
-          ></div>
-          <span
-            class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >{{ item.status ? "Вкл" : "Выкл" }}</span
-          >
-        </label>
-        <!-- <div v-if="item.status">
-          <button class="on">Вкл</button>
-        </div>
-        <div v-else>
-          <button class="off">Выкл</button>
-        </div> -->
-      </div>
-      <hr />
-      <p class="type">
-        <span class="py-1 px-2 bg-slate-300 rounded-md"
-          >{{ item.type }} {{ item.value }}</span
-        >
-      </p>
-
-      <a href="#">
-        <img class="image rounded-t-lg w-full h-80" :src="item.image" alt="" />
-      </a>
+    <div v-for="item in instruments" :key="item.id">
+      <Card :item="item" />
     </div>
   </div>
 </template>
@@ -113,27 +78,5 @@ h1 {
   font-size: 20px;
   font-weight: bold;
   color: rgb(149, 4, 4);
-}
-
-.image {
-  transition: 0.7s;
-}
-
-.image:hover {
-  transform: translateX(-15px);
-}
-
-.on {
-  background-color: green;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.off {
-  background-color: red;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
 }
 </style>
