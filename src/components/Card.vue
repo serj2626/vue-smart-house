@@ -43,8 +43,8 @@ const updateValue = async (id) => {
   <div
     class="card max-w-sm px-6 pb-10 pt-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
   >
-    <div class="flex justify-between items-center py-4">
-      <div class="title">
+    <div class="flex justify-between items-center py-4 text-red-600">
+      <div class="title dark:text-white text-center text-xl font-bold">
         {{ item.name }}
       </div>
       <label class="inline-flex items-center me-5 cursor-pointer">
@@ -153,13 +153,6 @@ const updateValue = async (id) => {
 </template>
 
 <style scoped>
-.title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  color: rgb(149, 4, 4);
-}
-
 .card {
   margin-bottom: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

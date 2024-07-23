@@ -6,34 +6,21 @@ import Footer from "./components/Footer.vue";
 </script>
 
 <template>
-  <div class="app">
+  <div class="app bg-[#fbf1f1] dark:bg-[#1f1f1f]">
     <header>
       <Navigation />
     </header>
     <main class="container mx-auto">
       <RouterView />
     </main>
-    <footer>
+    <footer class="flex justify-around items-center py-5 text-center">
       <Footer />
     </footer>
   </div>
 </template>
 
 <style scoped>
-.app {
-  background-color: #fbf1f1;
-}
-
 main {
   min-height: 80vh;
-}
-
-footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid #dbc3c3;
-    padding-block: 20px;
-    text-align: center;
 }
 </style>

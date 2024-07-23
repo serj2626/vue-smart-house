@@ -1,10 +1,42 @@
 <script setup>
 import { reactive } from 'vue';
+import { useAuthStore } from "../stores/auth";
+import { useRouter } from "vue-router";
+import { useToast } from "vue-toastification";
+
+
+const toast = useToast();
+const router = useRouter();
+const store = useAuthStore();
+
+const validateUser = () => {
+  if (!user.email || !user.password) {
+    toast.error("Заполните все поля");
+    return false;
+  }
+  return true;
+}
 
 const user = reactive({
   email: '',
   password: '',
 })
+
+
+const loginForm = () => {
+  if (validateUser()) {
+    try {
+      store.login(user);
+      
+      user.email = "";
+      user.password = "";
+      toast.success("Аккаунт создан");
+      router.push("/");
+    } catch (error) {
+      toast.error("При авторизации произошла ошибка");
+    }
+  }
+};
 </script>
 
 <template>
@@ -42,7 +74,6 @@ const user = reactive({
       </div>
       <button
         class="my-6 py-2 px-4 bg-red-700 hover:bg-red-800 rounded-md text-white"
-        type="submit"
       >
         Войти
       </button>

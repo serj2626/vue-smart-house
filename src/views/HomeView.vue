@@ -22,7 +22,7 @@ onMounted(getInstruments);
 </script>
 
 <template>
-  <h1>Управление техникой</h1>
+  <h1 class="dark:text-white text-center my-11 text-2xl font-bold text-stone-600">Управление техникой</h1>
 
   <div v-if="!instruments.length" role="status" class="flex justify-center">
     <svg
@@ -51,14 +51,6 @@ onMounted(getInstruments);
   </div>
 </template>
 <style scoped>
-h1 {
-  text-align: center;
-  margin-block: 46px;
-  font-size: 26px;
-  font-weight: bold;
-  color: rgb(67, 53, 53);
-}
-
 .type {
   padding-block: 10px;
   text-align: end;

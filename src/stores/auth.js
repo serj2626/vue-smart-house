@@ -2,6 +2,8 @@ import { ref, computed, reactive } from "vue";
 import { defineStore } from "pinia";
 import axios from "axios";
 
+const url = import.meta.env.VITE_APP_URL
+
 export const useAuthStore = defineStore("auth", () => {
   const user = reactive({
     id: null,
@@ -12,8 +14,8 @@ export const useAuthStore = defineStore("auth", () => {
 
   async function signup(data) {
     try {
-      const res = await axios.post("https://212d693d0d677138.mokky.dev/register", data);
-
+      const res = await axios.post(`${url}/register`, data);
+      console.log(res);
       if (res.status === 201) {
         setUser(res);
       }
@@ -25,8 +27,7 @@ export const useAuthStore = defineStore("auth", () => {
 
   async function login(data) {
     try {
-      const res = await axios.post("https://212d693d0d677138.mokky.dev/auth", data);
-
+      const res = await axios.post(`${url}/auth`, data);
       if (res.status === 201) {
         setUser(res);
       }
@@ -37,12 +38,12 @@ export const useAuthStore = defineStore("auth", () => {
   }
 
   function setUser(res) {
-    user.id = res.data.id
-    user.email = res.data.email
-    user.password = res.data.password
-    user.token = res.data.token
-    localStorage.setItem("user", JSON.stringify(user));
+    // user.id = res.data.id
+    // user.email = res.data.email
+    // user.password = res.data.password
+    // user.token = res.token
+    localStorage.setItem("user", JSON.stringify({token: res.token}));
   }
 
-  return { user, signup };
+  return { user, signup, login };
 });

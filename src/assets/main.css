@@ -9,7 +9,7 @@
     }
     .header-link{
         @apply py-3 px-2 text-gray-600 text-2xl font-semibold 
-        hover:text-gray-500 mx-2 border-b-2 border-b-slate-100
+        hover:text-gray-500 mx-2 border-b-2 border-b-slate-100 dark:text-yellow-400 dark:border-opacity-0
     }
 
 }
