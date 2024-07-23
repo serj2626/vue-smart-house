@@ -48,7 +48,7 @@ const signupForm = () => {
     <form
       method="post"
       @submit.prevent="signupForm"
-      class="flex flex-col gap-4 items-center mt-16 shadow-2xl rounded-md 
+      class="flex flex-col gap-4 items-center mt-16  rounded-md 
       bg-slate-100 p-8 w-2/4 mx-auto"
     >
       <h1 class="text-center font-bold text-3xl mb-12">Создание аккаунта</h1>
@@ -105,7 +105,7 @@ const signupForm = () => {
           placeholder="Повторите пароль"
         />
       </div>
-      <button class="my-6 py-2 px-4 bg-blue-500 rounded-md text-white">
+      <button class="my-6 py-2 px-4  bg-red-700 hover:bg-red-800 rounded-md text-white">
         Зарегистрироваться
       </button>
       <p>
@@ -129,7 +129,7 @@ h1 {
   color: rgb(149, 4, 4);
 }
 
-button {
-  background: rgb(149, 4, 4);
+form{
+  box-shadow: 0 0 20px rgb(132, 127, 127);
 }
 </style>
