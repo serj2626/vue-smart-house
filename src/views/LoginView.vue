@@ -26,11 +26,11 @@ const user = reactive({
 const loginForm = () => {
   if (validateUser()) {
     try {
-      store.login(user);
+      store.auth(user);
       
       user.email = "";
       user.password = "";
-      toast.success("Аккаунт создан");
+      toast.success("Вы вошли в аккаунт");
       router.push("/");
     } catch (error) {
       toast.error("При авторизации произошла ошибка");
@@ -43,7 +43,7 @@ const loginForm = () => {
   <main>
     <form @submit.prevent="loginForm"
       class="flex flex-col gap-4 items-center mt-16  rounded-md 
-      bg-slate-100 p-8 w-2/4 mx-auto"
+      bg-slate-200 dark:bg-slate-400 p-8 w-2/4 mx-auto"
     >
       <h1 class="text-center font-bold text-3xl mb-12">Войти в аккаунт</h1>
       <div class="flex justify-between items-center">
@@ -77,7 +77,7 @@ const loginForm = () => {
       >
         Войти
       </button>
-      <p>Нет аккаунта? <RouterLink to="/signup"><span class="text-blue-500">Создать</span></RouterLink></p>
+      <p>Нет аккаунта? <RouterLink to="/signup"><span class="text-blue-500 dark:text-blue-800">Создать</span></RouterLink></p>
     </form>
   </main>
 </template>

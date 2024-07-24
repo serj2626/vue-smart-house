@@ -22,7 +22,7 @@ onMounted(getInstruments);
 </script>
 
 <template>
-  <h1 class="dark:text-white text-center my-11 text-2xl font-bold text-stone-600">Управление техникой</h1>
+  <h1 class="dark:text-white text-center my-11 text-2xl font-bold text-stone-600 max-sm:text-2xl max-sm:mt-32">Управление техникой</h1>
 
   <div v-if="!instruments.length" role="status" class="flex justify-center">
     <svg

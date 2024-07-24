@@ -7,7 +7,7 @@ const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-  <nav class="flex justify-around items-center">
+  <nav class="flex justify-around items-center h-[60px] bg-zinc-800 dark:bg-zinc-700">
     <div>
       <p class="text-white font-serif font-bold text-2xl">Умный дом</p>
     </div>
@@ -29,6 +29,7 @@ const toggleDark = useToggle(isDark);
           d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
         />
       </svg>
+      
       <svg
         v-if="isDark"
         xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +38,6 @@ const toggleDark = useToggle(isDark);
         stroke-width="1.5"
         stroke="currentColor"
         class="size-8 svg-dark"
-        title="Светлая тема"
         @click="toggleDark()"
       >
         <path
@@ -54,7 +54,6 @@ const toggleDark = useToggle(isDark);
         stroke-width="1.5"
         stroke="currentColor"
         class="size-8 svg-white"
-        title="Темная тема"
         @click="toggleDark()"
       >
         <path
@@ -67,10 +66,10 @@ const toggleDark = useToggle(isDark);
   </nav>
 
   <header
-    class="container mx-auto h-[100px] mt-3 flex justify-around items-center"
+    class="container mx-auto h-[100px] mt-3 flex justify-around items-center flex-wrap"
   >
     <img src="/logo1.png" width="100" height="200" alt="Мой Дом" />
-    <div class="flex">
+    <div class="flex flex-wrap">
       <RouterLink class="header-link" to="/">Мой Дом</RouterLink>
       <RouterLink class="header-link" :to="{ name: 'account' }"
         >Мой профиль</RouterLink
@@ -79,16 +78,13 @@ const toggleDark = useToggle(isDark);
       <RouterLink class="header-link" :to="{ name: 'signup' }"
         >Регистрация</RouterLink
       >
+      <a  class="header-link">Выйти</a>
+
     </div>
   </header>
 </template>
 
 <style scoped>
-nav {
-  height: 60px;
-  background-color: rgb(45, 43, 43);
-}
-
 nav img {
   height: 40px;
   margin-right: 10px;

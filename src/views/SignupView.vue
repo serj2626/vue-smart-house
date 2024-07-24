@@ -29,7 +29,7 @@ const validateUser = () => {
 const signupForm = () => {
   if (validateUser()) {
     try {
-      store.signup(user);
+      store.auth(user, "signup");
       toast.success("Аккаунт создан");
       user.fullName = "";
       user.email = "";
@@ -49,7 +49,7 @@ const signupForm = () => {
       method="post"
       @submit.prevent="signupForm"
       class="flex flex-col gap-4 items-center mt-16  rounded-md 
-      bg-slate-100 p-8 w-2/4 mx-auto"
+      bg-slate-200 dark:bg-slate-400 p-8 w-2/4 mx-auto"
     >
       <h1 class="text-center font-bold text-3xl mb-12">Создание аккаунта</h1>
       <div class="flex justify-between items-center">
@@ -111,7 +111,7 @@ const signupForm = () => {
       <p>
         Есть аккаунт?
         <RouterLink to="/login">
-          <span class="text-blue-500">Войти</span>
+          <span class="text-blue-500  dark:text-blue-800">Войти</span>
         </RouterLink>
       </p>
     </form>

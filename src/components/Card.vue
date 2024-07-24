@@ -44,7 +44,7 @@ const updateValue = async (id) => {
 <template>
   <div
     class="card max-w-sm px-6 pb-10 pt-2 bg-white border 
-    border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    border-gray-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700"
   >
     <div class="flex justify-between items-center py-4 text-red-600">
       <div class="title dark:text-white text-center text-xl font-bold">
@@ -81,7 +81,7 @@ const updateValue = async (id) => {
     </p>
 
     <a href="#">
-      <img class="image rounded-t-lg w-80 h-80" :src="item.image" alt="" />
+      <img class="image rounded-t-lg w-60 h-60 mx-auto" :src="item.image" alt="" />
     </a>
 
     <form class="max-w-xs mx-auto mt-4">
@@ -156,16 +156,13 @@ const updateValue = async (id) => {
 </template>
 
 <style scoped>
-.card {
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 .image {
-  transition: 0.7s;
+  transition: all 0.2s ease-in
 }
 
 .image:hover {
   transform: translateX(-10px);
+  filter: brightness(110%);
 }
 </style>

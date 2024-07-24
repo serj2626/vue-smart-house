@@ -1,15 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-@layer components{
-    .container{
+@layer components {
+    .container {
         @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
     }
-    .header-link{
-        @apply py-3 px-2 text-gray-600 text-2xl font-semibold 
-        hover:text-gray-500 mx-2 border-b-2 border-b-slate-100 dark:text-yellow-400 dark:border-opacity-0
+
+    .header-link {
+        @apply py-3 px-2 text-gray-600 text-2xl font-semibold hover:text-gray-500 mx-2 border-b-2 border-b-slate-100 dark:text-yellow-400 dark:hover:text-yellow-200 dark:border-opacity-0
+    }
+
+    .footer-link {
+        @apply cursor-pointer transition-all duration-75 ease-in hover:transform hover:scale-150
     }
 
 }
