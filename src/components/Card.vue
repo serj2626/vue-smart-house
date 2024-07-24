@@ -1,6 +1,6 @@
 <script setup>
 import axios from "axios";
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 import { useToast } from "vue-toastification";
 
 const value = ref(0);
@@ -37,11 +37,14 @@ const updateValue = async (id) => {
     toast.error("При обновлении данных произошла ошибка");
   }
 };
+
+
 </script>
 
 <template>
   <div
-    class="card max-w-sm px-6 pb-10 pt-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    class="card max-w-sm px-6 pb-10 pt-2 bg-white border 
+    border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
   >
     <div class="flex justify-between items-center py-4 text-red-600">
       <div class="title dark:text-white text-center text-xl font-bold">
@@ -70,7 +73,7 @@ const updateValue = async (id) => {
         >
       </label>
     </div>
-    <hr />
+  
     <p class="type">
       <span class="py-1 px-2 bg-slate-300 rounded-md"
         >{{ item.type }} {{ item.value }}</span
@@ -78,7 +81,7 @@ const updateValue = async (id) => {
     </p>
 
     <a href="#">
-      <img class="image rounded-t-lg w-full h-80" :src="item.image" alt="" />
+      <img class="image rounded-t-lg w-80 h-80" :src="item.image" alt="" />
     </a>
 
     <form class="max-w-xs mx-auto mt-4">
